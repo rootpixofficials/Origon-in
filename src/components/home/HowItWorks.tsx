@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { MousePointer, CreditCard, Truck, Smile, LucideIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Step {
   step: number;
@@ -40,12 +43,38 @@ const steps: Step[] = [
 ];
 
 const HowItWorks: React.FC = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-green-700 via-green-600 to-emerald-500">
       <div className="max-w-7xl mx-auto px-4">
-
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
           <span className="text-white/80 font-semibold text-sm uppercase tracking-wider mb-4 block">
             Simple Process
           </span>
@@ -57,16 +86,25 @@ const HowItWorks: React.FC = () => {
           <p className="text-white/80 text-lg">
             Getting your favorite kunafa is just a few clicks away!
           </p>
-        </div>
+        </motion.div>
 
         {/* Steps */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {steps.map((step, index) => {
             const Icon = step.icon;
 
             return (
-              <div key={index} className="relative text-center">
-
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="relative text-center"
+              >
                 {/* Connector Line */}
                 {index < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-12 left-[60%] w-[80%] h-0.5 bg-white/30" />
@@ -79,9 +117,7 @@ const HowItWorks: React.FC = () => {
                   </div>
 
                   {/* Step Number */}
-                  <span
-                    className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-green-900 font-bold text-sm shadow-lg"
-                  >
+                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-green-900 font-bold text-sm shadow-lg">
                     {step.step}
                   </span>
                 </div>
@@ -93,11 +129,10 @@ const HowItWorks: React.FC = () => {
                 <p className="text-white/80 leading-relaxed">
                   {step.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );

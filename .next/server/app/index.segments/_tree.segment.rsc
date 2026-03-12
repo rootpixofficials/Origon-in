@@ -1,9 +1,4 @@
-:HL["/_next/static/chunks/4c13a9ec7999edd8.css","style"]
+:HL["/_next/static/chunks/d7cacaa0846d3c40.css","style"]
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/images/hero-kunafa.jpg","image"]
-:HL["/images/kunafa-classic.jpg","image"]
-:HL["/images/kunafa-cream.jpg","image"]
 :HL["/images/logo.jpeg","image"]
-:HL["/images/kunafa-mini.jpg","image"]
-:HL["/images/kunafa-chocolate.jpg","image"]
-0:{"buildId":"a5A8imD-cEOnpeNhcE2mg","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"YRL-4d9zVeOyLgXBNbio-","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

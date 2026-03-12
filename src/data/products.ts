@@ -17,6 +17,7 @@ export interface Product {
     allergens: string;
   };
   stock: number;
+  images: string[];
 }
 
 export const products: Product[] = [
@@ -28,6 +29,12 @@ export const products: Product[] = [
     price: 299,
     originalPrice: 399,
     image: "/images/kunafa-classic.jpg",
+    images: [
+      "/images/kunafa-classic.jpg",
+      "/images/kunafa-cream.jpg",
+      "/images/kunafa-mini.jpg",
+      "/images/kunafa-chocolate.jpg"
+    ],
     rating: 4.9,
     reviews: 128,
     badge: "Best Seller",
@@ -54,6 +61,12 @@ export const products: Product[] = [
     price: 349,
     originalPrice: 449,
     image: "/images/kunafa-cream.jpg",
+    images: [
+      "/images/kunafa-cream.jpg",
+      "/images/kunafa-classic.jpg",
+      "/images/kunafa-mini.jpg",
+      "/images/kunafa-chocolate.jpg"
+    ],
     rating: 4.8,
     reviews: 95,
     badge: "Popular",
@@ -80,6 +93,12 @@ export const products: Product[] = [
     price: 199,
     originalPrice: 249,
     image: "/images/kunafa-mini.jpg",
+    images: [
+      "/images/kunafa-mini.jpg",
+      "/images/kunafa-classic.jpg",
+      "/images/kunafa-cream.jpg",
+      "/images/kunafa-chocolate.jpg"
+    ],
     rating: 4.7,
     reviews: 76,
     badge: "Party Pack",
@@ -106,6 +125,12 @@ export const products: Product[] = [
     price: 379,
     originalPrice: 499,
     image: "/images/kunafa-chocolate.jpg",
+    images: [
+      "/images/kunafa-chocolate.jpg",
+      "/images/kunafa-classic.jpg",
+      "/images/kunafa-cream.jpg",
+      "/images/kunafa-mini.jpg"
+    ],
     rating: 4.9,
     reviews: 112,
     badge: "New",

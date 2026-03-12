@@ -1,8 +1,28 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import { ArrowRight, Star, Truck, Shield } from "lucide-react";
 import Link from "next/link";
 
 const Hero: React.FC = () => {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section id="home" className="relative min-h-screen pt-20 overflow-hidden">
       {/* Background Gradient */}
@@ -17,29 +37,48 @@ const Hero: React.FC = () => {
           {/* Content */}
           <div className="text-white space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full"
+            >
               <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
               <span className="text-sm font-medium">
                 Premium Quality Desserts
               </span>
-            </div>
+            </motion.div>
 
             {/* Heading */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Authentic{" "}
-              <span className="text-yellow-400">Pistachio</span>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
+            >
+              Authentic <span className="text-yellow-400">Pistachio</span>
               <br />
               Kunafa Delivered
-            </h1>
+            </motion.h1>
 
             {/* Description */}
-            <p className="text-lg md:text-xl text-white/90 max-w-lg leading-relaxed">
-              Experience the rich, authentic taste of handcrafted pistachio kunafa
-              made with premium ingredients and traditional recipes.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-lg md:text-xl text-white/90 max-w-lg leading-relaxed"
+            >
+              Experience the rich, authentic taste of handcrafted pistachio
+              kunafa made with premium ingredients and traditional recipes.
+            </motion.p>
 
             {/* Features */}
-            <div className="flex flex-wrap gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap gap-6"
+            >
               <div className="flex items-center gap-2">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <Truck className="h-5 w-5" />
@@ -53,10 +92,15 @@ const Hero: React.FC = () => {
                 </div>
                 <span className="text-sm font-medium">Fresh & Safe</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-wrap gap-4 pt-4"
+            >
               <Link href="/products">
                 <button className="group flex items-center gap-2 bg-yellow-400 text-green-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition">
                   Order Now
@@ -69,27 +113,38 @@ const Hero: React.FC = () => {
                   View Menu
                 </button>
               </Link>
-            </div>
+            </motion.div>
 
             {/* Trust Indicators */}
-            <div className="flex items-center gap-8 pt-8 border-t border-white/20">
-              <div>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="flex items-center gap-8 pt-8 border-t border-white/20"
+            >
+              <motion.div variants={itemVariants}>
                 <div className="text-3xl font-bold">500+</div>
                 <div className="text-sm text-white/70">Happy Customers</div>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={itemVariants}>
                 <div className="text-3xl font-bold">4.9</div>
                 <div className="text-sm text-white/70">Rating</div>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={itemVariants}>
                 <div className="text-3xl font-bold">24h</div>
                 <div className="text-sm text-white/70">Delivery</div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
 
           {/* Hero Image */}
-          <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative"
+          >
             <img
               src="/images/hero-kunafa.jpg"
               alt="Delicious Pistachio Kunafa"
@@ -97,7 +152,12 @@ const Hero: React.FC = () => {
             />
 
             {/* Floating Badge */}
-            <div className="absolute -bottom-4 -left-4 md:bottom-8 md:-left-8 bg-white p-4 rounded-2xl shadow-xl z-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="absolute -bottom-4 -left-4 md:bottom-8 md:-left-8 bg-white p-4 rounded-2xl shadow-xl z-20"
+            >
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-gradient-to-br from-yellow-400 to-yellow-300 rounded-xl">
                   <Star className="h-5 w-5 text-green-900 fill-green-900" />
@@ -107,8 +167,8 @@ const Hero: React.FC = () => {
                   <div className="text-sm text-gray-500">Classic Kunafa</div>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

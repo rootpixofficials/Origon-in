@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { Star, Quote } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Testimonial {
   id: number;
@@ -41,12 +44,38 @@ const testimonials: Testimonial[] = [
 ];
 
 const CustomerRating: React.FC = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
-
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
           <span className="text-green-700 font-semibold text-sm uppercase tracking-wider mb-4 block">
             Customer Love
           </span>
@@ -58,13 +87,20 @@ const CustomerRating: React.FC = () => {
           <p className="text-gray-600 text-lg">
             Don’t just take our word for it — hear from our happy customers!
           </p>
-        </div>
+        </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8"
+        >
           {testimonials.map((testimonial) => (
-            <div
+            <motion.div
               key={testimonial.id}
+              variants={itemVariants}
               className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-500"
             >
               {/* Quote Icon */}
@@ -101,10 +137,9 @@ const CustomerRating: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );

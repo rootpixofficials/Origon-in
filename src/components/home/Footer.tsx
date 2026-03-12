@@ -14,22 +14,6 @@ const Footer: React.FC = () => {
   return (
     <footer id="contact" className="bg-gray-900 text-white">
 
-      {/* CTA Section */}
-      <div className="bg-gradient-to-r from-green-700 to-green-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Taste Perfection?
-          </h2>
-          <p className="text-white/80 mb-8 text-lg">
-            Order now and experience the authentic taste of premium pistachio kunafa!
-          </p>
-
-          <button className="px-10 py-4 rounded-full bg-yellow-400 text-gray-900 font-bold text-lg hover:bg-yellow-300 transition">
-            Order Now
-          </button>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4">
@@ -124,7 +108,7 @@ const Footer: React.FC = () => {
                 <li className="flex gap-3">
                   <MapPin className="h-5 w-5 text-yellow-400" />
                   <span className="text-white/70">
-                    marvattom, Kadampuzha, Kerala 676553
+                    Marvattom, Kadampuzha, Kerala 676553
                   </span>
                 </li>
 

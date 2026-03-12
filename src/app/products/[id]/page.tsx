@@ -11,6 +11,7 @@ export default function ProductDetailPage() {
   const params = useParams();
   const router = useRouter();
   const [product, setProduct] = useState<Product | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(0);
   const [isLiked, setIsLiked] = useState<boolean>(false);
   const [imageHovered, setImageHovered] = useState<boolean>(false);
@@ -20,6 +21,7 @@ export default function ProductDetailPage() {
     const foundProduct = products.find(p => p.id === id);
     if (foundProduct) {
       setProduct(foundProduct);
+      setSelectedImage(foundProduct.image);
     } else {
       router.push("/products");
     }
@@ -78,21 +80,26 @@ export default function ProductDetailPage() {
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className="space-y-8"
+            className="space-y-6"
           >
             <motion.div
               variants={itemVariants}
-              className="relative rounded-3xl overflow-hidden bg-white shadow-2xl"
+              className="relative rounded-3xl overflow-hidden bg-white shadow-2xl border border-gray-100"
               onMouseEnter={() => setImageHovered(true)}
               onMouseLeave={() => setImageHovered(false)}
             >
-              <motion.img
-                variants={imageVariants}
-                animate={imageHovered ? "hover" : "initial"}
-                src={product.image}
-                alt={product.name}
-                className="w-full aspect-square object-cover"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={selectedImage}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  src={selectedImage}
+                  alt={product.name}
+                  className="w-full aspect-square object-cover"
+                />
+              </AnimatePresence>
               
               <motion.span
                 variants={badgeVariants}
@@ -111,6 +118,23 @@ export default function ProductDetailPage() {
               >
                 <Heart className={`h-6 w-6 ${isLiked ? 'fill-red-500 text-red-500' : 'text-gray-600'}`} />
               </motion.button>
+            </motion.div>
+
+            {/* Thumbnails */}
+            <motion.div variants={itemVariants} className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
+              {product.images.map((img, idx) => (
+                <motion.button
+                  key={idx}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setSelectedImage(img)}
+                  className={`relative h-20 w-20 md:h-24 md:w-24 rounded-2xl overflow-hidden flex-shrink-0 border-2 transition-all duration-300 ${
+                    selectedImage === img ? 'border-green-500 shadow-lg' : 'border-transparent opacity-70 hover:opacity-100'
+                  }`}
+                >
+                  <img src={img} alt={`${product.name} thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                </motion.button>
+              ))}
             </motion.div>
           </motion.div>
 

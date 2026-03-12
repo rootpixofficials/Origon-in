@@ -4,5 +4,6 @@
   "/about/page": "/about",
   "/contact/page": "/contact",
   "/page": "/",
+  "/products/[id]/page": "/products/[id]",
   "/products/page": "/products"
 }

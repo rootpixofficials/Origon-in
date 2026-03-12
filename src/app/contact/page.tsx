@@ -8,7 +8,7 @@ import {
   Clock,
   Instagram,
   Facebook,
-  Twitter,
+  Linkedin,
   MessageCircle,
   User,
   Send,
@@ -464,19 +464,19 @@ export default function ContactUs() {
               </div>
 
               {/* Social Cards */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="flex flex-wrap justify-center gap-6">
                 {[
-                  { name: 'Instagram', followers: '25K followers', icon: Instagram, color: 'bg-[#E1306C]' },
-                  { name: 'Facebook', followers: '18K followers', icon: Facebook, color: 'bg-[#1877F2]' },
-                  { name: 'Twitter', followers: '12K followers', icon: Twitter, color: 'bg-[#1DA1F2]' },
+                  { name: 'Facebook', followers: '18K followers', Icon: Facebook, color: 'bg-[#1877F2]' },
+                  { name: 'Instagram', followers: '25K followers', Icon: Instagram, color: 'bg-[#E1306C]' },
+                  { name: 'LinkedIn', followers: '12K followers', Icon: Linkedin, color: 'bg-[#0A66C2]' },
                 ].map((social, idx) => (
                   <motion.div
                     key={idx}
                     whileHover={{ y: -5 }}
-                    className={`${social.color} rounded-3xl p-6 text-center shadow-lg cursor-pointer transition-all`}
+                    className={`${social.color} rounded-3xl p-6 text-center shadow-lg cursor-pointer transition-all min-w-[160px] flex-1 max-w-[200px]`}
                   >
                     <div className="bg-white/20 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <social.icon className="h-6 w-6 text-white" />
+                      <social.Icon className="h-6 w-6 text-white" />
                     </div>
                     <h4 className="font-bold text-white text-sm md:text-base">{social.name}</h4>
                     <p className="text-white/80 text-[10px] md:text-xs">{social.followers}</p>
