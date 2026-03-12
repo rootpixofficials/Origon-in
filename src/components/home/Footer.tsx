@@ -79,7 +79,13 @@ const Footer: React.FC = () => {
                 {["Home", "Products", "About Us", "Contact"].map((link) => (
                   <li key={link}>
                     <Link
-                      href={link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`}
+                      href={
+                        link === "Home"
+                          ? "/"
+                          : link === "About Us"
+                            ? "/about"
+                            : `/${link.toLowerCase().replace(" ", "")}`
+                      }
                       className="text-white/70 hover:text-yellow-400 transition"
                     >
                       {link}

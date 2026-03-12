@@ -1486,7 +1486,7 @@ const Footer = ()=>{
                                             "Contact"
                                         ].map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                                    href: link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`,
+                                                    href: link === "Home" ? "/" : link === "About Us" ? "/about" : `/${link.toLowerCase().replace(" ", "")}`,
                                                     className: "text-white/70 hover:text-yellow-400 transition",
                                                     children: link
                                                 }, void 0, false, {
@@ -1517,7 +1517,7 @@ const Footer = ()=>{
                                         children: "Our Products"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                        lineNumber: 94,
+                                        lineNumber: 100,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1534,23 +1534,23 @@ const Footer = ()=>{
                                                     children: product
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/home/Footer.tsx",
-                                                    lineNumber: 103,
+                                                    lineNumber: 109,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, product, false, {
                                                 fileName: "[project]/src/components/home/Footer.tsx",
-                                                lineNumber: 102,
+                                                lineNumber: 108,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 101,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home/Footer.tsx",
-                                lineNumber: 93,
+                                lineNumber: 99,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1560,7 +1560,7 @@ const Footer = ()=>{
                                         children: "Contact Us"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 122,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1573,7 +1573,7 @@ const Footer = ()=>{
                                                         className: "h-5 w-5 text-yellow-400"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                                        lineNumber: 119,
+                                                        lineNumber: 125,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1581,13 +1581,13 @@ const Footer = ()=>{
                                                         children: "marvattom, Kadampuzha, Kerala 676553"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                                        lineNumber: 120,
+                                                        lineNumber: 126,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/home/Footer.tsx",
-                                                lineNumber: 118,
+                                                lineNumber: 124,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1597,7 +1597,7 @@ const Footer = ()=>{
                                                         className: "h-5 w-5 text-yellow-400"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                                        lineNumber: 126,
+                                                        lineNumber: 132,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1605,13 +1605,13 @@ const Footer = ()=>{
                                                         children: "+91 9961722605"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                                        lineNumber: 127,
+                                                        lineNumber: 133,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/home/Footer.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 131,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1621,7 +1621,7 @@ const Footer = ()=>{
                                                         className: "h-5 w-5 text-yellow-400"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                                        lineNumber: 131,
+                                                        lineNumber: 137,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1629,13 +1629,13 @@ const Footer = ()=>{
                                                         children: "info@origon.in"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                                        lineNumber: 132,
+                                                        lineNumber: 138,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/home/Footer.tsx",
-                                                lineNumber: 130,
+                                                lineNumber: 136,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1645,7 +1645,7 @@ const Footer = ()=>{
                                                         className: "h-5 w-5 text-yellow-400"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                                        lineNumber: 136,
+                                                        lineNumber: 142,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1653,25 +1653,25 @@ const Footer = ()=>{
                                                         children: "9:00 AM – 9:00 PM"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                                        lineNumber: 137,
+                                                        lineNumber: 143,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/home/Footer.tsx",
-                                                lineNumber: 135,
+                                                lineNumber: 141,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/home/Footer.tsx",
-                                        lineNumber: 117,
+                                        lineNumber: 123,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home/Footer.tsx",
-                                lineNumber: 115,
+                                lineNumber: 121,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
@@ -1695,7 +1695,7 @@ const Footer = ()=>{
                 children: "© 2026 Origon.in. All rights reserved. Made with ❤️ in India"
             }, void 0, false, {
                 fileName: "[project]/src/components/home/Footer.tsx",
-                lineNumber: 147,
+                lineNumber: 153,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]

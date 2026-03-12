@@ -103,7 +103,7 @@ const milestones = [
 
 export default function AboutPage() {
   const [activeMilestone, setActiveMilestone] = useState<number>(2);
-  
+
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
@@ -142,16 +142,16 @@ export default function AboutPage() {
               <Heart className="h-4 w-4" />
               Our Story
             </span>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
               More Than Just{" "}
               <span className="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">
                 Kunafa
               </span>
             </h1>
-            
+
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              We're a family-run business bringing authentic Middle Eastern sweetness to your table, 
+              We're a family-run business bringing authentic Middle Eastern sweetness to your table,
               preserving traditions while embracing innovation since 1995.
             </p>
           </motion.div>
@@ -172,7 +172,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="absolute -top-6 -left-6 w-24 h-24 bg-green-100 rounded-3xl -z-10"></div>
                 <img
-                  src="/images/kunafa-making.jpg"
+                  src="/images/hero-kunafa.jpg"
                   alt="Handcrafting kunafa"
                   className="rounded-3xl shadow-2xl"
                 />
@@ -203,8 +203,8 @@ export default function AboutPage() {
                   Our <span className="text-green-600">Journey</span> of Flavor
                 </h2>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  What began as a family recipe in a small kitchen has blossomed into a passion 
-                  project that brings authentic Middle Eastern desserts to thousands of homes. 
+                  What began as a family recipe in a small kitchen has blossomed into a passion
+                  project that brings authentic Middle Eastern desserts to thousands of homes.
                   Every kunafa we make carries the love and tradition of generations.
                 </p>
               </div>
@@ -216,7 +216,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Our Mission</h3>
                   <p className="text-gray-600">
-                    To preserve authentic Middle Eastern dessert traditions while making them 
+                    To preserve authentic Middle Eastern dessert traditions while making them
                     accessible to everyone, everywhere.
                   </p>
                 </div>
@@ -276,9 +276,8 @@ export default function AboutPage() {
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       onClick={() => setActiveMilestone(index)}
-                      className={`bg-white p-6 rounded-2xl shadow-lg cursor-pointer transition-all ${
-                        activeMilestone === index ? 'ring-2 ring-green-500' : ''
-                      }`}
+                      className={`bg-white p-6 rounded-2xl shadow-lg cursor-pointer transition-all ${activeMilestone === index ? 'ring-2 ring-green-500' : ''
+                        }`}
                     >
                       <div className="inline-flex items-center gap-2 text-green-600 font-bold text-sm mb-2">
                         <div className="w-2 h-2 bg-green-600 rounded-full"></div>
