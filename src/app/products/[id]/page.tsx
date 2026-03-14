@@ -225,51 +225,77 @@ export default function ProductDetailPage() {
 
       <AnimatePresence>
         {quantity > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 100 }}
-            className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-white rounded-3xl shadow-2xl p-4 flex items-center gap-6 z-50 border border-green-100 min-w-[400px]"
-          >
-            <div className="flex items-center gap-4 flex-1">
-              <img src={product.image} alt={product.name} className="h-16 w-16 rounded-2xl object-cover" />
-              <div>
-                <p className="font-bold text-gray-900">{product.name}</p>
-                <p className="text-green-600 font-bold text-lg">₹{product.price * quantity}</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 bg-gray-100 p-1 rounded-2xl">
-               <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setQuantity(q => Math.max(0, q - 1))}
-                className="h-10 w-10 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-red-500 transition-colors"
-               >
-                 <ChevronLeft className="h-5 w-5" />
-               </motion.button>
-               
-               <span className="font-bold text-lg w-8 text-center text-black">{quantity}</span>
-
-               <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setQuantity(q => q + 1)}
-                className="h-10 w-10 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-green-600 transition-colors"
-               >
-                 <ChevronRight className="h-5 w-5" />
-               </motion.button>
-            </div>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={handleCheckout}
-              className="bg-green-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg shadow-green-200 hover:bg-green-700 transition-all"
+          <div className="sticky bottom-4 md:bottom-8 z-40 max-w-7xl mx-auto px-4 pointer-events-none pb-4 md:pb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 100 }}
+              className="mx-auto w-[92%] md:w-auto md:min-w-[500px] max-w-2xl bg-white rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.1)] p-4 flex flex-col md:flex-row items-center gap-4 md:gap-6 border border-green-100 pointer-events-auto"
             >
-              Checkout
-            </motion.button>
-          </motion.div>
+              <div className="flex items-center justify-between w-full md:w-auto md:flex-1 gap-4">
+                <div className="flex items-center gap-4">
+                  <img src={product.image} alt={product.name} className="h-14 w-14 md:h-16 md:w-16 rounded-2xl object-cover" />
+                  <div>
+                    <p className="font-bold text-gray-900 line-clamp-1 text-sm md:text-base">{product.name}</p>
+                    <p className="text-green-600 font-bold text-base md:text-lg">₹{product.price * quantity}</p>
+                  </div>
+                </div>
+
+                {/* Mobile-only checkout counter */}
+                <div className="flex md:hidden items-center gap-2 bg-gray-50 p-1 rounded-2xl border border-gray-100">
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setQuantity(q => Math.max(0, q - 1))}
+                    className="h-8 w-8 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-red-500 transition-colors"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </motion.button>
+                  <span className="font-bold text-base w-6 text-center text-black">{quantity}</span>
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setQuantity(q => q + 1)}
+                    className="h-8 w-8 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-green-600 transition-colors"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </motion.button>
+                </div>
+              </div>
+
+              <div className="flex w-full md:w-auto items-center gap-3">
+                {/* Desktop-only checkout counter */}
+                <div className="hidden md:flex items-center gap-3 bg-gray-50 p-1 rounded-2xl border border-gray-100">
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setQuantity(q => Math.max(0, q - 1))}
+                    className="h-10 w-10 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-red-500 transition-colors"
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </motion.button>
+                  <span className="font-bold text-lg w-8 text-center text-black">{quantity}</span>
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setQuantity(q => q + 1)}
+                    className="h-10 w-10 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-green-600 transition-colors"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </motion.button>
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleCheckout}
+                  className="flex-1 md:flex-none bg-green-600 text-white px-8 py-3 md:py-4 rounded-2xl font-bold shadow-lg shadow-green-200 hover:bg-green-700 transition-all text-sm md:text-base flex items-center justify-center gap-2"
+                >
+                  Checkout <ShoppingBag className="h-4 w-4 md:hidden" />
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
       <Footer />

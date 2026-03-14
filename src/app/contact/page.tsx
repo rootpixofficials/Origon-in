@@ -94,6 +94,22 @@ export default function ContactUs() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [activeTab, setActiveTab] = useState('general');
 
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [isNewsletterSubscribing, setIsNewsletterSubscribing] = useState(false);
+  const [isNewsletterSubscribed, setIsNewsletterSubscribed] = useState(false);
+
+  const handleNewsletterSubmit = async () => {
+    if (!newsletterEmail) return;
+    setIsNewsletterSubscribing(true);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    setIsNewsletterSubscribing(false);
+    setIsNewsletterSubscribed(true);
+    setTimeout(() => {
+      setIsNewsletterSubscribed(false);
+      setNewsletterEmail('');
+    }, 3000);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -113,7 +129,7 @@ export default function ContactUs() {
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
     const val = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
     setFormData(prev => ({ ...prev, [name]: val }));
@@ -235,25 +251,6 @@ export default function ContactUs() {
                 </p>
               </div>
 
-              {/* Inquiry Type Tabs */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                {inquiryTypes.map((type) => (
-                  <motion.button
-                    key={type.id}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setActiveTab(type.id)}
-                    className={`flex items-center gap-2 px-4 py-3 rounded-xl transition-all ${activeTab === type.id
-                      ? 'bg-green-600 text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                      }`}
-                  >
-                    <type.icon className="h-4 w-4" />
-                    <span className="font-medium">{type.label}</span>
-                  </motion.button>
-                ))}
-              </div>
-
               {/* Contact Form */}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
@@ -306,15 +303,27 @@ export default function ContactUs() {
                     <label className="flex items-center gap-2 text-gray-700 font-medium mb-2">
                       <MessageCircle className="h-4 w-4" /> Subject
                     </label>
-                    <input
-                      type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-4 rounded-2xl border border-gray-200 outline-none focus:border-green-500 transition !text-black shadow-sm"
-                      placeholder="Write your subject here."
-                    />
+                    <div className="relative">
+                      <select
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-4 rounded-2xl border border-gray-200 outline-none focus:border-green-500 transition !text-black shadow-sm appearance-none bg-white cursor-pointer"
+                      >
+                        <option value="" disabled>Select inquiry type</option>
+                        {inquiryTypes.map((type) => (
+                          <option key={type.id} value={type.label}>
+                            {type.label}
+                          </option>
+                        ))}
+                      </select>
+                      <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -363,6 +372,17 @@ export default function ContactUs() {
                     </>
                   )}
                 </motion.button>
+
+                {isSubmitted && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="p-4 border-2 border-green-500 rounded-xl flex items-center gap-3 bg-green-50/50"
+                  >
+                    <CheckCircle className="h-6 w-6 text-green-500" />
+                    <p className="font-medium text-gray-800">Thank you for your message. It has been sent.</p>
+                  </motion.div>
+                )}
               </form>
             </motion.div>
 
@@ -504,13 +524,33 @@ export default function ContactUs() {
                   <div className="relative group">
                     <input
                       type="email"
+                      value={newsletterEmail}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
                       placeholder="Enter your email"
                       className="w-full bg-[#334155] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-yellow-400 transition text-white pr-12"
                     />
                     <Mail className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-yellow-400 transition" />
                   </div>
-                  <button className="w-full py-5 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold rounded-2xl shadow-xl transition-all">
-                    Subscribe Now
+                  <button
+                    onClick={handleNewsletterSubmit}
+                    disabled={!newsletterEmail || isNewsletterSubscribing || isNewsletterSubscribed}
+                    className={`w-full py-5 font-bold rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 ${
+                      isNewsletterSubscribed
+                        ? 'bg-green-500 hover:bg-green-600 text-white'
+                        : isNewsletterSubscribing || !newsletterEmail
+                        ? 'bg-yellow-400/50 text-gray-900/50 cursor-not-allowed'
+                        : 'bg-yellow-400 hover:bg-yellow-300 text-gray-900'
+                    }`}
+                  >
+                    {isNewsletterSubscribing ? (
+                      "Subscribing..."
+                    ) : isNewsletterSubscribed ? (
+                      <>
+                        <CheckCircle className="h-5 w-5" /> Subscribed
+                      </>
+                    ) : (
+                      "Subscribe Now"
+                    )}
                   </button>
                   <p className="text-[10px] text-gray-500 text-center">
                     We respect your privacy. Unsubscribe at any time.
