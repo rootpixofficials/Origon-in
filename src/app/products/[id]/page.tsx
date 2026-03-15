@@ -219,85 +219,146 @@ export default function ProductDetailPage() {
                 {quantity === 0 ? "Add to Cart" : "Add More"}
               </button>
             </div>
+
+            {/* Static Checkout Box */}
+            <AnimatePresence>
+              {quantity > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                  animate={{ opacity: 1, height: 'auto', marginTop: 32 }}
+                  exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                  className="overflow-hidden"
+                >
+                  <div className="bg-white rounded-3xl shadow-lg p-6 flex flex-col items-center gap-6 border border-green-100">
+                    <div className="flex items-center justify-between w-full">
+                      <div className="flex items-center gap-4">
+                        <img src={product.image} alt={product.name} className="h-16 w-16 rounded-2xl object-cover" />
+                        <div>
+                          <p className="font-bold text-gray-900 line-clamp-1">{product.name}</p>
+                          <p className="text-sm text-gray-500">Qty: {quantity}</p>
+                        </div>
+                      </div>
+
+                      <div className="text-right">
+                        <p className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Total Amount</p>
+                        <p className="text-green-600 font-bold text-2xl">₹{product.price * quantity}</p>
+                      </div>
+                    </div>
+
+                    <div className="w-full flex items-center justify-between gap-4">
+                      {/* Quantity Controls */}
+                      <div className="flex items-center gap-3 bg-gray-50 p-1 rounded-2xl border border-gray-100">
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() => setQuantity(q => Math.max(0, q - 1))}
+                          className="h-12 w-12 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-red-500 transition-colors"
+                        >
+                          <ChevronLeft className="h-5 w-5" />
+                        </motion.button>
+                        <span className="font-bold text-lg w-8 text-center text-black">{quantity}</span>
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() => setQuantity(q => q + 1)}
+                          className="h-12 w-12 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-green-600 transition-colors"
+                        >
+                          <ChevronRight className="h-5 w-5" />
+                        </motion.button>
+                      </div>
+
+                      {/* Checkout Button */}
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={handleCheckout}
+                        className="flex-1 bg-green-600 text-white px-6 py-4 rounded-2xl font-bold shadow-lg shadow-green-200 hover:bg-green-700 transition-all flex items-center justify-center gap-2 text-lg"
+                      >
+                        Checkout <ShoppingBag className="h-5 w-5" />
+                      </motion.button>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
       </main>
 
-      <AnimatePresence>
-        {quantity > 0 && (
-          <div className="sticky bottom-4 md:bottom-8 z-40 max-w-7xl mx-auto px-4 pointer-events-none pb-4 md:pb-8">
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 100 }}
-              className="mx-auto w-[92%] md:w-auto md:min-w-[500px] max-w-2xl bg-white rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.1)] p-4 flex flex-col md:flex-row items-center gap-4 md:gap-6 border border-green-100 pointer-events-auto"
-            >
-              <div className="flex items-center justify-between w-full md:w-auto md:flex-1 gap-4">
-                <div className="flex items-center gap-4">
-                  <img src={product.image} alt={product.name} className="h-14 w-14 md:h-16 md:w-16 rounded-2xl object-cover" />
-                  <div>
-                    <p className="font-bold text-gray-900 line-clamp-1 text-sm md:text-base">{product.name}</p>
-                    <p className="text-green-600 font-bold text-base md:text-lg">₹{product.price * quantity}</p>
-                  </div>
-                </div>
-
-                {/* Mobile-only checkout counter */}
-                <div className="flex md:hidden items-center gap-2 bg-gray-50 p-1 rounded-2xl border border-gray-100">
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={() => setQuantity(q => Math.max(0, q - 1))}
-                    className="h-8 w-8 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-red-500 transition-colors"
-                  >
-                    <ChevronLeft className="h-4 w-4" />
-                  </motion.button>
-                  <span className="font-bold text-base w-6 text-center text-black">{quantity}</span>
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={() => setQuantity(q => q + 1)}
-                    className="h-8 w-8 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-green-600 transition-colors"
-                  >
-                    <ChevronRight className="h-4 w-4" />
-                  </motion.button>
-                </div>
-              </div>
-
-              <div className="flex w-full md:w-auto items-center gap-3">
-                {/* Desktop-only checkout counter */}
-                <div className="hidden md:flex items-center gap-3 bg-gray-50 p-1 rounded-2xl border border-gray-100">
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={() => setQuantity(q => Math.max(0, q - 1))}
-                    className="h-10 w-10 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-red-500 transition-colors"
-                  >
-                    <ChevronLeft className="h-5 w-5" />
-                  </motion.button>
-                  <span className="font-bold text-lg w-8 text-center text-black">{quantity}</span>
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={() => setQuantity(q => q + 1)}
-                    className="h-10 w-10 flex items-center justify-center bg-white rounded-xl shadow-sm text-gray-600 hover:text-green-600 transition-colors"
-                  >
-                    <ChevronRight className="h-5 w-5" />
-                  </motion.button>
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={handleCheckout}
-                  className="flex-1 md:flex-none bg-green-600 text-white px-8 py-3 md:py-4 rounded-2xl font-bold shadow-lg shadow-green-200 hover:bg-green-700 transition-all text-sm md:text-base flex items-center justify-center gap-2"
-                >
-                  Checkout <ShoppingBag className="h-4 w-4 md:hidden" />
-                </motion.button>
-              </div>
-            </motion.div>
+      {/* Other Products Section */}
+      <section className="py-20 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">You May Also Like</h2>
+            <Link href="/products" className="text-green-600 font-semibold hover:text-green-700 flex items-center gap-2">
+              View All <ChevronRight className="h-4 w-4" />
+            </Link>
           </div>
-        )}
-      </AnimatePresence>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {products
+              .filter(p => p.id !== product.id)
+              .slice(0, 4)
+              .map((relatedProduct) => (
+              <motion.div
+                key={relatedProduct.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Link
+                  href={`/products/${relatedProduct.id}`}
+                  className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition duration-500 block h-full border border-gray-100"
+                >
+                  <div className="relative overflow-hidden aspect-square">
+                    <img
+                      src={relatedProduct.image}
+                      alt={relatedProduct.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <span
+                      className={`absolute top-4 left-4 ${relatedProduct.badgeColor} text-white text-xs font-bold px-3 py-1 rounded-full`}
+                    >
+                      {relatedProduct.badge}
+                    </span>
+                  </div>
+
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1">
+                        <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        <span className="font-semibold text-sm">
+                          {relatedProduct.rating}
+                        </span>
+                      </div>
+                      <span className="text-gray-500 text-sm">
+                        ({relatedProduct.reviews})
+                      </span>
+                    </div>
+
+                    <h3 className="font-bold text-lg text-gray-900 group-hover:text-green-600 transition line-clamp-1">
+                      {relatedProduct.name}
+                    </h3>
+
+                    <div className="flex items-center justify-between pt-2">
+                      <div className="flex flex-col">
+                        <span className="text-xl font-bold text-green-600">
+                          ₹{relatedProduct.price}
+                        </span>
+                      </div>
+                      <div className="h-10 w-10 bg-green-50 rounded-xl flex items-center justify-center text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all">
+                        <ShoppingBag className="h-5 w-5" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
