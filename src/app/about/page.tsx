@@ -1,109 +1,9 @@
 "use client";
-import React, { useState, useRef } from 'react';
-import { Truck, Shield, Clock, Award, Leaf, Heart, Globe, Star, ChefHat, Users, MapPin, Repeat, LucideIcon, ChevronRight, ShoppingBag } from "lucide-react";
+import React, { useRef } from 'react';
+import { Target, Globe, TrendingUp, Shield, Handshake, Users, ArrowRight } from "lucide-react";
 import { motion, useInView } from 'framer-motion';
 import Footer from "@/components/home/Footer";
 import Link from "next/link";
-
-interface Feature {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  stat: string;
-  statLabel: string;
-}
-
-const features: Feature[] = [
-  {
-    icon: Truck,
-    title: "Fast Delivery",
-    description: "Fresh kunafa delivered to your doorstep within 24 hours",
-    stat: "98%",
-    statLabel: "On-time Delivery"
-  },
-  {
-    icon: Shield,
-    title: "Quality Assured",
-    description: "Premium pistachios and ingredients sourced from trusted suppliers",
-    stat: "100%",
-    statLabel: "Quality Guarantee"
-  },
-  {
-    icon: Clock,
-    title: "Made Fresh Daily",
-    description: "Every order is prepared fresh to ensure the best taste",
-    stat: "24h",
-    statLabel: "Freshness Window"
-  },
-  {
-    icon: Award,
-    title: "Traditional Recipe",
-    description: "Authentic Middle Eastern recipes passed down through generations",
-    stat: "3+",
-    statLabel: "Generations"
-  },
-  {
-    icon: Leaf,
-    title: "Natural Ingredients",
-    description: "No preservatives, no artificial flavors — just pure goodness",
-    stat: "0%",
-    statLabel: "Artificial Additives"
-  },
-  {
-    icon: Heart,
-    title: "Made with Love",
-    description: "Handcrafted with passion and attention to every detail",
-    stat: "6000+",
-    statLabel: "Happy Customers"
-  },
-];
-
-interface TeamMember {
-  name: string;
-  role: string;
-  experience: string;
-  image: string;
-  quote: string;
-}
-
-const teamMembers: TeamMember[] = [
-  {
-    name: "Ahmed Al-Hakim",
-    role: "Master Chef",
-    experience: "Mastery of Traditional Kunafa",
-    image: "/images/chef-ahmed.jpg",
-    quote: "Authentic Traditional Sweets"
-  },
-  {
-    name: "Fatima Al-Mansoori",
-    role: "Culinary Director",
-    experience: "Innovation in Every Bite",
-    image: "/images/chef-fatima.jpg",
-    quote: "Middle Eastern Fusion"
-  },
-  {
-    name: "Yusuf Khan",
-    role: "Operations Head",
-    experience: "Quality & Logistics Mastery",
-    image: "/images/quality-yusuf.jpg",
-    quote: "The Quality Standard Experts"
-  },
-];
-
-const milestones = [
-  { year: "1995", title: "Family Recipe Born", description: "Our original kunafa recipe was perfected in a home kitchen" },
-  { year: "2010", title: "First Shop Opens", description: "The first flagship retail location opened in Dubai" },
-  { year: "2018", title: "Online Expansion", description: "Launched our first digital platform for nationwide delivery" },
-  { year: "2022", title: "Award Recognition", description: "Received the prestigious 'Best Gourmet Dessert' award" },
-  { year: "2023", title: "International", description: "Expanded shipping to over 15 countries worldwide" },
-];
-
-const impactStats = [
-  { icon: ShoppingBag, value: "10,000+", label: "Orders Served" },
-  { icon: Star, value: "4.9/5", label: "Customer Rating" },
-  { icon: MapPin, value: "50+", label: "Cities Covered" },
-  { icon: Repeat, value: "95%", label: "Repeat Customers" },
-];
 
 export default function AboutPage() {
   const containerRef = useRef(null);
@@ -114,18 +14,8 @@ export default function AboutPage() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-green-50 to-white py-24 text-center">
         <div className="max-w-7xl mx-auto px-4">
@@ -134,14 +24,16 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
           >
             <span className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-              OUR MISSION
+              COMPANY INTRODUCTION
             </span>
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
-              More Than Just <span className="text-green-600">Kunafa</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              Building Strong <span className="text-green-600">Distribution Networks</span> <br/> for Growing Brands
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We're a family-run business bringing authentic Middle Eastern sweetness to your table,
-              preserving traditions while embracing innovation since 1995.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Founded in 2025, ORIGON is a fast-growing FMCG sales and distribution company headquartered in 
+              Maravattam, Kadampuzha, Malappuram, Kerala. Our mission is to help brands expand their market 
+              reach through reliable distribution, efficient supply chain management, and strong business 
+              partnerships.
             </p>
           </motion.div>
         </div>
@@ -158,26 +50,29 @@ export default function AboutPage() {
               variants={fadeInUp}
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Our <span className="text-green-600">Journey</span> of Flavor
+                Our <span className="text-green-600">Growth Journey</span>
               </h2>
-              <p className="text-gray-600 text-lg mb-8">
-                What began as a family recipe in a small kitchen has blossomed into a passion project that brings authentic Middle Eastern desserts to thousands of homes. Every kunafa we make carries the love and tradition of generations.
+              <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+                Our journey began with the distribution of ₹100 Kunafa Chocolate, which quickly gained popularity across Malappuram. Through a dedicated sales network and consistent customer demand, we have successfully distributed thousands of units and currently sell more than 1,000 Kunafa Chocolates daily.
+              </p>
+              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                As demand grew, ORIGON expanded beyond a single product by adding more chocolate and confectionery products to our catalog. Today, we continue to identify quality products with strong market potential while building a diverse portfolio that serves retailers, wholesalers, and consumers.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6">
-                <div className="p-6 border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition">
+                <div className="p-6 border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition bg-gray-50">
                   <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
-                    <Star className="h-6 w-6 text-green-600" />
+                    <Target className="h-6 w-6 text-green-600" />
                   </div>
                   <h3 className="font-bold text-gray-900 mb-2">Our Mission</h3>
-                  <p className="text-sm text-gray-600">To preserve authentic Middle Eastern dessert traditions while making them accessible to everyone.</p>
+                  <p className="text-sm text-gray-600">To help brands expand their market reach through reliable distribution and efficient supply chain management.</p>
                 </div>
-                <div className="p-6 border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition">
+                <div className="p-6 border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition bg-gray-50">
                   <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
                     <Globe className="h-6 w-6 text-green-600" />
                   </div>
                   <h3 className="font-bold text-gray-900 mb-2">Our Vision</h3>
-                  <p className="text-sm text-gray-600">To become the world's most trusted brand for authentic and high quality Middle Eastern sweets.</p>
+                  <p className="text-sm text-gray-600">To establish a nationwide distribution network that connects brands with markets across India.</p>
                 </div>
               </div>
             </motion.div>
@@ -188,15 +83,15 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative rounded-3xl overflow-hidden"
             >
-              <img src="/images/hero-kunafa.jpg" alt="Kunafa Art" className="w-full shadow-2xl" />
+              <img src="/images/hero-kunafa.jpg" alt="Distribution Network" className="w-full shadow-2xl" />
               <div className="absolute top-6 right-6 bg-white/95 backdrop-blur px-4 py-3 rounded-2xl shadow-xl border border-white/20">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-green-100 rounded-lg">
-                    <ChefHat className="h-5 w-5 text-green-700" />
+                    <TrendingUp className="h-5 w-5 text-green-700" />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">25+ Years</p>
-                    <p className="text-[10px] text-gray-500 uppercase font-bold tracking-tight">of Excellence</p>
+                    <p className="font-bold text-gray-900">Expanding</p>
+                    <p className="text-[10px] text-gray-500 uppercase font-bold tracking-tight">Across Kerala</p>
                   </div>
                 </div>
               </div>
@@ -205,154 +100,72 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Milestones */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900">
-              Our <span className="text-green-600">Milestones</span>
-            </h2>
-            <p className="text-gray-600 mt-4 font-medium tracking-tight">From humble beginnings to nationwide recognition</p>
-          </div>
-
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-green-200" />
-
-            <div className="space-y-12">
-              {milestones.map((m, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  className={`flex items-center gap-8 ${i % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
-                >
-                  <div className={`w-1/2 ${i % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 inline-block max-w-xs transition hover:shadow-lg">
-                      <span className="text-green-600 font-bold text-sm block mb-1 tracking-widest">• {m.year}</span>
-                      <h3 className="font-bold text-gray-900 mb-2">{m.title}</h3>
-                      <p className="text-sm text-gray-500">{m.description}</p>
-                    </div>
-                  </div>
-                  <div className="relative z-10 w-4 h-4 rounded-full bg-green-600 border-4 border-white shadow-sm" />
-                  <div className="w-1/2" />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Origon Difference */}
-      <section className="py-24">
+      {/* Supporting Emerging Brands */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-green-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">WHY CHOOSE US</span>
+            <span className="text-green-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">PARTNER WITH US</span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              The <span className="text-green-600">Origon</span> Difference
+              Supporting <span className="text-green-600">Emerging Brands</span>
             </h2>
-            <p className="text-gray-500 mt-4 max-w-2xl mx-auto">We're committed to bringing you the most authentic and delicious pistachio kunafa experience.</p>
-          </div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {features.map((f, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500"
-              >
-                <div className="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-green-100">
-                  <f.icon className="h-7 w-7 text-white" />
-                </div>
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">{f.title}</h3>
-                  <div className="text-right">
-                    <p className="text-2xl font-bold text-green-600">{f.stat}</p>
-                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">{f.statLabel}</p>
-                  </div>
-                </div>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Impact Stats */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16"
-          >
-            {impactStats.map((s, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover:border-green-200 transition"
-              >
-                <div className="flex justify-center mb-4">
-                  <s.icon className="h-6 w-6 text-green-600" />
-                </div>
-                <p className="text-3xl font-bold text-gray-900 mb-1">{s.value}</p>
-                <p className="text-xs text-gray-500 font-bold uppercase tracking-tight">{s.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-
-      {/* Meet Our Family */}
-      <section className="py-24 bg-gray-50/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900">
-              Meet Our <span className="text-green-600">Family</span>
-            </h2>
-            <p className="text-gray-500 mt-4 tracking-tight">The passionate team behind every sweet box of joy.</p>
+            <p className="text-gray-600 mt-4 max-w-3xl mx-auto text-lg leading-relaxed">
+              At ORIGON, we believe that many excellent products never reach their full market potential due to 
+              limited distribution. Our focus is on partnering with small and emerging businesses that are looking 
+              to expand their products into new markets.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {teamMembers.map((m, i) => (
+            {[
+              { icon: Handshake, title: "Trusted Growth Partner", desc: "Becoming a reliable distribution network rather than just another supplier." },
+              { icon: Shield, title: "Market Expansion", desc: "Building long-term partnerships with manufacturers to scale presence." },
+              { icon: Users, title: "Retail Network", desc: "Strengthening retail and wholesale distribution across key demographics." }
+            ].map((f, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500"
+                className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 text-center"
               >
-                <div className="h-80 overflow-hidden">
-                  <img src={m.image} alt={m.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
+                <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <f.icon className="h-8 w-8 text-green-600" />
                 </div>
-                <div className="p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="flex items-center gap-2 px-3 py-1 bg-green-50 text-green-700 rounded-full text-[10px] font-bold uppercase tracking-widest border border-green-100">
-                      <ChefHat className="h-3 w-3" />
-                      {m.role}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{m.name}</h3>
-                  <p className="text-sm text-green-600 font-bold mb-4 tracking-tighter uppercase">{m.experience}</p>
-                  <div className="pt-4 border-t border-gray-50">
-                    <p className="text-gray-500 text-sm italic">"{m.quote}"</p>
-                  </div>
-                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{f.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Looking Ahead */}
+      <section className="py-24">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Looking <span className="text-green-600">Ahead</span>
+            </h2>
+            <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+              ORIGON's vision is to establish a nationwide distribution network that connects brands with markets across India. As we continue to grow, we welcome manufacturers, startups, and established businesses seeking a trusted distribution partner.
+            </p>
+            <p className="text-gray-600 text-lg mb-12 leading-relaxed">
+              Our long-term goal is not only to distribute quality products but also to develop our own branded products and expand into manufacturing, creating an integrated ecosystem of manufacturing, branding, and distribution.
+            </p>
+            <p className="text-xl font-bold text-gray-900 mb-8 italic">
+              "Connecting Brands Today, Building India's Distribution Network for Tomorrow."
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50 pb-32">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -360,17 +173,20 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="bg-green-600 rounded-[3rem] p-12 md:p-20 text-center text-white shadow-2xl shadow-green-200"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Taste the Difference?</h2>
-            <p className="text-green-50 text-lg mb-10 max-w-xl mx-auto">Handcrafted authentic Middle Eastern sweets delivered right to your door.</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Grow Your Business?</h2>
+            <p className="text-green-50 text-lg mb-10 max-w-2xl mx-auto">
+              Together, we aim to create opportunities, expand markets, and build lasting business relationships that drive sustainable growth for everyone involved.
+            </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/products">
-                <button className="bg-white text-green-700 px-10 py-4 rounded-full font-bold hover:bg-green-50 transition shadow-lg">
-                  Order Now
+              <Link href="/partner">
+                <button className="bg-white text-green-700 px-10 py-4 rounded-full font-bold hover:bg-green-50 transition shadow-lg flex items-center gap-2">
+                  Become a Partner
+                  <ArrowRight className="h-5 w-5" />
                 </button>
               </Link>
-              <Link href="/products">
+              <Link href="/contact">
                 <button className="border-2 border-white/30 text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition">
-                  View Menu
+                  Contact Us
                 </button>
               </Link>
             </div>

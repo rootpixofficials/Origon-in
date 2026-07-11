@@ -23,130 +23,169 @@ export interface Product {
 export const products: Product[] = [
   {
     id: 1,
-    name: "Classic Pistachio Kunafa",
-    description: "Traditional kunafa with rich cheese filling and crushed pistachios",
-    longDescription: "Our signature Classic Pistachio Kunafa is made using generations-old recipes, featuring crispy shredded phyllo dough layered with premium Akkawi cheese and generously topped with the finest Iranian pistachios. Each bite offers a perfect balance of crispy texture and creamy filling.",
-    price: 299,
-    originalPrice: 399,
-    image: "/images/kunafa-classic.jpg",
-    images: [
-      "/images/kunafa-classic.jpg",
-      "/images/kunafa-cream.jpg",
-      "/images/kunafa-mini.jpg",
-      "/images/kunafa-chocolate.jpg"
-    ],
-    rating: 4.9,
-    reviews: 128,
-    badge: "Best Seller",
-    badgeColor: "bg-green-600",
-    features: [
-      "Made with premium Iranian pistachios",
-      "Freshly baked daily",
-      "Serves 4-6 people",
-      "24-hour freshness guarantee",
-      "Vegetarian friendly"
-    ],
-    nutrition: {
-      calories: "450 per serving",
-      servingSize: "100g",
-      allergens: "Dairy, Nuts"
-    },
-    stock: 15
-  },
-  {
-    id: 2,
-    name: "Cream Layer Kunafa",
-    description: "Layered cream kunafa with generous pistachio topping",
-    longDescription: "Indulge in our luxurious Cream Layer Kunafa, featuring delicate layers of buttery phyllo pastry alternating with rich clotted cream (Ashta). Topped with crushed pistachios and a drizzle of rose syrup, this dessert is perfect for special occasions.",
-    price: 349,
-    originalPrice: 449,
-    image: "/images/kunafa-cream.jpg",
-    images: [
-      "/images/kunafa-cream.jpg",
-      "/images/kunafa-classic.jpg",
-      "/images/kunafa-mini.jpg",
-      "/images/kunafa-chocolate.jpg"
-    ],
-    rating: 4.8,
-    reviews: 95,
-    badge: "Popular",
-    badgeColor: "bg-yellow-500",
-    features: [
-      "Extra creamy texture",
-      "Rose syrup drizzle",
-      "Clotted cream layers",
-      "Gold leaf garnish option",
-      "Premium packaging"
-    ],
-    nutrition: {
-      calories: "520 per serving",
-      servingSize: "100g",
-      allergens: "Dairy, Nuts"
-    },
-    stock: 8
-  },
-  {
-    id: 3,
-    name: "Mini Kunafa Cups",
-    description: "Perfect individual portions for parties and gatherings",
-    longDescription: "Our Mini Kunafa Cups are the ideal party dessert! Each cup contains a perfectly portioned serving of our traditional kunafa, making them easy to serve and perfect for events. Available in packs of 12 or 24.",
-    price: 199,
-    originalPrice: 249,
-    image: "/images/kunafa-mini.jpg",
-    images: [
-      "/images/kunafa-mini.jpg",
-      "/images/kunafa-classic.jpg",
-      "/images/kunafa-cream.jpg",
-      "/images/kunafa-chocolate.jpg"
-    ],
-    rating: 4.7,
-    reviews: 76,
-    badge: "Party Pack",
-    badgeColor: "bg-amber-500",
-    features: [
-      "Individual servings",
-      "Easy to serve",
-      "Perfect for events",
-      "Variety pack available",
-      "Microwave safe cups"
-    ],
-    nutrition: {
-      calories: "280 per cup",
-      servingSize: "1 cup",
-      allergens: "Dairy, Nuts"
-    },
-    stock: 25
-  },
-  {
-    id: 4,
-    name: "Chocolate Pistachio Kunafa",
-    description: "Fusion dessert with rich chocolate drizzle and pistachios",
-    longDescription: "Experience the ultimate fusion dessert! Our Chocolate Pistachio Kunafa combines traditional Middle Eastern flavors with Belgian chocolate. Each piece is drizzled with dark chocolate and topped with premium pistachios for a unique taste experience.",
-    price: 379,
-    originalPrice: 499,
+    name: "Premium Kunafa Chocolate",
+    description: "The signature chocolate that started our journey.",
+    longDescription: "Our signature Premium Kunafa Chocolate combines the rich taste of premium chocolate with the traditional crunch of kunafa. It has gained immense popularity across Malappuram and is perfect for gifting or personal indulgence.",
+    price: 100,
+    originalPrice: 120,
     image: "/images/kunafa-chocolate.jpg",
     images: [
       "/images/kunafa-chocolate.jpg",
-      "/images/kunafa-classic.jpg",
-      "/images/kunafa-cream.jpg",
-      "/images/kunafa-mini.jpg"
+      "/images/kunafa-classic.jpg"
     ],
     rating: 4.9,
-    reviews: 112,
-    badge: "New",
-    badgeColor: "bg-red-500",
+    reviews: 1250,
+    badge: "Best Seller",
+    badgeColor: "bg-green-600",
     features: [
-      "Belgian chocolate drizzle",
-      "Fusion dessert",
-      "Rich cocoa flavor",
-      "Perfect for chocolate lovers",
-      "Gourmet presentation"
+      "Premium cocoa blend",
+      "Authentic kunafa crunch",
+      "High market demand",
+      "Excellent shelf life"
     ],
     nutrition: {
-      calories: "480 per serving",
-      servingSize: "100g",
+      calories: "220 per serving",
+      servingSize: "50g",
       allergens: "Dairy, Nuts, Soy"
     },
-    stock: 12
+    stock: 500
   },
+  {
+    id: 2,
+    name: "Bites",
+    description: "Delicious bite-sized chocolate treats.",
+    longDescription: "Perfectly portioned chocolate bites for a quick sweet fix. These are ideal for retail distribution and impulse buys at checkout counters.",
+    price: 50,
+    originalPrice: 60,
+    image: "/images/kunafa-mini.jpg",
+    images: [
+      "/images/kunafa-mini.jpg"
+    ],
+    rating: 4.7,
+    reviews: 320,
+    badge: "Popular",
+    badgeColor: "bg-yellow-500",
+    features: [
+      "Bite-sized convenience",
+      "Rich chocolate flavor",
+      "Attractive packaging"
+    ],
+    nutrition: {
+      calories: "150 per serving",
+      servingSize: "30g",
+      allergens: "Dairy, Soy"
+    },
+    stock: 1000
+  },
+  {
+    id: 3,
+    name: "Honey Nuts Mix",
+    description: "A healthy and energetic mix of premium nuts and pure honey.",
+    longDescription: "A premium blend of roasted almonds, cashews, and pistachios coated in pure natural honey. A nutritious snack option with high retail demand.",
+    price: 250,
+    originalPrice: 299,
+    image: "/images/kunafa-classic.jpg",
+    images: [
+      "/images/kunafa-classic.jpg"
+    ],
+    rating: 4.8,
+    reviews: 415,
+    badge: "Healthy",
+    badgeColor: "bg-emerald-500",
+    features: [
+      "Pure natural honey",
+      "Premium roasted nuts",
+      "High protein content",
+      "No artificial preservatives"
+    ],
+    nutrition: {
+      calories: "180 per serving",
+      servingSize: "40g",
+      allergens: "Nuts"
+    },
+    stock: 300
+  },
+  {
+    id: 4,
+    name: "Almond Dates Chocolate",
+    description: "Premium dates stuffed with roasted almonds and coated in chocolate.",
+    longDescription: "A luxurious fusion of Arabian dates, crunchy roasted almonds, and smooth milk chocolate. An elegant product line suitable for premium retail outlets.",
+    price: 180,
+    originalPrice: 220,
+    image: "/images/kunafa-cream.jpg",
+    images: [
+      "/images/kunafa-cream.jpg"
+    ],
+    rating: 4.9,
+    reviews: 580,
+    badge: "Premium",
+    badgeColor: "bg-purple-500",
+    features: [
+      "Premium Arabian dates",
+      "Roasted almonds",
+      "Rich chocolate coating",
+      "Gourmet packaging"
+    ],
+    nutrition: {
+      calories: "160 per serving",
+      servingSize: "35g",
+      allergens: "Dairy, Nuts, Soy"
+    },
+    stock: 450
+  },
+  {
+    id: 5,
+    name: "Cashew Dates Chocolate",
+    description: "Rich dates stuffed with premium cashews in a chocolate shell.",
+    longDescription: "Combining the natural sweetness of dates with the buttery crunch of premium cashews, all enveloped in high-quality chocolate. A must-have for confectionery distributors.",
+    price: 180,
+    originalPrice: 220,
+    image: "/images/kunafa-mini.jpg",
+    images: [
+      "/images/kunafa-mini.jpg"
+    ],
+    rating: 4.8,
+    reviews: 490,
+    badge: "New",
+    badgeColor: "bg-blue-500",
+    features: [
+      "Premium cashews",
+      "Natural date sweetness",
+      "Smooth chocolate finish"
+    ],
+    nutrition: {
+      calories: "165 per serving",
+      servingSize: "35g",
+      allergens: "Dairy, Nuts, Soy"
+    },
+    stock: 400
+  },
+  {
+    id: 6,
+    name: "Kunafa Dates Chocolate",
+    description: "The ultimate fusion: Dates, chocolate, and crispy kunafa.",
+    longDescription: "Our innovative creation blending dates and chocolate with the signature crunch of toasted kunafa. An exclusive product offering for our super stockists.",
+    price: 200,
+    originalPrice: 250,
+    image: "/images/kunafa-chocolate.jpg",
+    images: [
+      "/images/kunafa-chocolate.jpg"
+    ],
+    rating: 5.0,
+    reviews: 890,
+    badge: "Signature",
+    badgeColor: "bg-red-500",
+    features: [
+      "Innovative recipe",
+      "Signature kunafa crunch",
+      "Premium ingredients",
+      "High market appeal"
+    ],
+    nutrition: {
+      calories: "190 per serving",
+      servingSize: "40g",
+      allergens: "Dairy, Nuts, Soy, Gluten"
+    },
+    stock: 600
+  }
 ];

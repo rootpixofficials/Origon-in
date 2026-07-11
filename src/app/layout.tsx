@@ -6,8 +6,8 @@ import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "origon.in | Premium Pistachio Kunafa",
-  description: "Authentic, handcrafted pistachio kunafa delivered to your doorstep.",
+  title: "ORIGON | Sales & Distribution | FMCG Super Stockist in Malappuram, Kerala",
+  description: "ORIGON is a trusted FMCG sales & distribution company and super stockist based in Malappuram, Kerala. We distribute premium food and consumer products, including Kunafa Chocolate, and partner with brands, distributors, and super stockists across India.",
   icons: {
     icon: "/images/logo.jpeg",
     apple: "/images/logo.jpeg",

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Truck, Shield, Clock, Award, Leaf, Heart, LucideIcon } from "lucide-react";
+import { Truck, Shield, Globe, Map, TrendingUp, CheckCircle, Users, Box, LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Feature {
@@ -12,39 +12,44 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    icon: Truck,
-    title: "Fast Delivery",
-    description: "Fresh kunafa delivered to your doorstep within 24 hours",
-  },
-  {
     icon: Shield,
-    title: "Quality Assured",
-    description:
-      "Premium pistachios and ingredients sourced from trusted suppliers",
+    title: "Trusted Distribution Partner",
+    description: "We build lasting relationships based on transparency, reliability, and consistent performance.",
   },
   {
-    icon: Clock,
-    title: "Made Fresh Daily",
-    description:
-      "Every order is prepared fresh to ensure the best taste",
+    icon: Truck,
+    title: "Fast & Efficient Delivery",
+    description: "Our streamlined distribution process ensures products are delivered quickly and efficiently.",
   },
   {
-    icon: Award,
-    title: "Traditional Recipe",
-    description:
-      "Authentic Middle Eastern recipes passed down through generations",
+    icon: Globe,
+    title: "Strong Retail & Wholesale Network",
+    description: "Expanding network of retailers, wholesalers, distributors, and super stockists across multiple markets.",
   },
   {
-    icon: Leaf,
-    title: "Natural Ingredients",
-    description:
-      "No preservatives, no artificial flavors — just pure goodness",
+    icon: Map,
+    title: "Kerala Market Expertise",
+    description: "With a strong presence in Kerala, we understand regional market trends and customer preferences.",
   },
   {
-    icon: Heart,
-    title: "Made with Love",
-    description:
-      "Handcrafted with passion and attention to every detail",
+    icon: TrendingUp,
+    title: "Expanding Distribution Network",
+    description: "Starting from Malappuram, continuously expanding across Kerala to create a nationwide network.",
+  },
+  {
+    icon: CheckCircle,
+    title: "Carefully Selected Quality Products",
+    description: "Partnering with manufacturers offering quality products with strong market potential.",
+  },
+  {
+    icon: Users,
+    title: "Dedicated Professional Team",
+    description: "Experienced and customer-focused team working closely with partners to provide responsive support.",
+  },
+  {
+    icon: Box,
+    title: "Reliable Supply Chain Solutions",
+    description: "From inventory management to delivery, maintaining a smooth, dependable supply chain.",
   },
 ];
 
@@ -72,7 +77,7 @@ const WhyChooseUs: React.FC = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="why-choose-us" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -87,16 +92,14 @@ const WhyChooseUs: React.FC = () => {
           </span>
 
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            The{" "}
+            Why Choose{" "}
             <span className="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">
-              Origon
-            </span>{" "}
-            Difference
+              ORIGON
+            </span>
           </h2>
 
           <p className="text-gray-600 text-lg">
-            We’re committed to bringing you the most authentic and delicious
-            pistachio kunafa experience.
+            We are committed to helping brands grow through reliable distribution, strong market connections, and long-term business partnerships.
           </p>
         </motion.div>
 
@@ -106,7 +109,7 @@ const WhyChooseUs: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {features.map((feature, index) => {
             const Icon = feature.icon;
@@ -124,7 +127,7 @@ const WhyChooseUs: React.FC = () => {
                   {feature.title}
                 </h3>
 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-sm">
                   {feature.description}
                 </p>
               </motion.div>

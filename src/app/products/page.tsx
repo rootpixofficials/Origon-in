@@ -27,7 +27,7 @@ export default function ProductsListingPage() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
           >
-            Delicious Kunafa{" "}
+            Premium Product{" "}
             <span className="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">
               Collection
             </span>
@@ -39,8 +39,8 @@ export default function ProductsListingPage() {
             transition={{ delay: 0.2 }}
             className="text-gray-600 text-lg"
           >
-            Explore our handcrafted collection of premium kunafas, made with the 
-            finest ingredients and authentic recipes.
+            Explore our curated collection of premium chocolates, dates, and confectionery, 
+            crafted to deliver an exceptional taste experience.
           </motion.p>
         </div>
 

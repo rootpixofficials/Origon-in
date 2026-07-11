@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             >
               <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
               <span className="text-sm font-medium">
-                Premium Quality Desserts
+                FMCG Sales & Distribution
               </span>
             </motion.div>
 
@@ -54,11 +54,10 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
             >
-              Authentic <span className="text-yellow-400">Pistachio</span>
-              <br />
-              Kunafa Delivered
+              Looking for a Trusted <br />
+              <span className="text-yellow-400">Distribution</span> Partner?
             </motion.h1>
 
             {/* Description */}
@@ -68,8 +67,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg md:text-xl text-white/90 max-w-lg leading-relaxed"
             >
-              Experience the rich, authentic taste of handcrafted pistachio
-              kunafa made with premium ingredients and traditional recipes.
+              ORIGON is a trusted FMCG sales & distribution company and super stockist based in Malappuram, Kerala. Connect with us to expand your reach.
             </motion.p>
 
             {/* Features */}
@@ -83,14 +81,14 @@ const Hero: React.FC = () => {
                 <div className="p-2 bg-white/20 rounded-lg">
                   <Truck className="h-5 w-5" />
                 </div>
-                <span className="text-sm font-medium">Fast Delivery</span>
+                <span className="text-sm font-medium">Pan Kerala Delivery</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <Shield className="h-5 w-5" />
                 </div>
-                <span className="text-sm font-medium">Fresh & Safe</span>
+                <span className="text-sm font-medium">Reliable Partner</span>
               </div>
             </motion.div>
 
@@ -103,14 +101,20 @@ const Hero: React.FC = () => {
             >
               <Link href="/products">
                 <button className="group flex items-center gap-2 bg-yellow-400 text-green-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition">
-                  Order Now
+                  View Products
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
 
-              <Link href="/products">
+              <Link href="/partner">
                 <button className="px-8 py-4 rounded-full border border-white text-white hover:bg-white hover:text-green-700 transition font-semibold">
-                  View Menu
+                  Become a Partner
+                </button>
+              </Link>
+
+              <Link href="/contact">
+                <button className="px-8 py-4 rounded-full border border-white text-white hover:bg-white hover:text-green-700 transition font-semibold">
+                  Contact Us
                 </button>
               </Link>
             </motion.div>
@@ -124,16 +128,16 @@ const Hero: React.FC = () => {
               className="flex items-center gap-8 pt-8 border-t border-white/20"
             >
               <motion.div variants={itemVariants}>
-                <div className="text-3xl font-bold">500+</div>
-                <div className="text-sm text-white/70">Happy Customers</div>
+                <div className="text-3xl font-bold">600+</div>
+                <div className="text-sm text-white/70">Retail Outlets</div>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <div className="text-3xl font-bold">4.9</div>
-                <div className="text-sm text-white/70">Rating</div>
+                <div className="text-3xl font-bold">14+</div>
+                <div className="text-sm text-white/70">Districts</div>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <div className="text-3xl font-bold">24h</div>
-                <div className="text-sm text-white/70">Delivery</div>
+                <div className="text-3xl font-bold">5+</div>
+                <div className="text-sm text-white/70">Years Exp.</div>
               </motion.div>
             </motion.div>
           </div>
@@ -151,7 +155,6 @@ const Hero: React.FC = () => {
               className="w-full max-w-lg mx-auto rounded-3xl shadow-2xl"
             />
 
-            {/* Floating Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -163,8 +166,8 @@ const Hero: React.FC = () => {
                   <Star className="h-5 w-5 text-green-900 fill-green-900" />
                 </div>
                 <div>
-                  <div className="font-bold text-gray-900">Best Seller</div>
-                  <div className="text-sm text-gray-500">Classic Kunafa</div>
+                  <div className="font-bold text-gray-900">Top Rated</div>
+                  <div className="text-sm text-gray-500">Distribution</div>
                 </div>
               </div>
             </motion.div>

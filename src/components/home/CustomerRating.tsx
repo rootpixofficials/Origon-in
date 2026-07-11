@@ -16,30 +16,39 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Priya Sharma",
-    location: "Mumbai",
+    name: "Retail Partner",
+    location: "Malappuram",
     rating: 5,
     text:
-      "Absolutely divine! The pistachio kunafa from Origon is the best I've ever had. The perfect balance of crispy and creamy.",
-    avatar: "PS",
+      "ORIGON ensures timely deliveries and maintains consistent product availability. Their service has helped us meet customer demand without interruption.",
+    avatar: "RP",
   },
   {
     id: 2,
-    name: "Rahul Verma",
-    location: "Delhi",
+    name: "Dealer",
+    location: "Kerala",
     rating: 5,
     text:
-      "Ordered for my mom's birthday and everyone loved it! Fresh, authentic, and delivered right on time. Highly recommend!",
-    avatar: "RV",
+      "Working with ORIGON has been a smooth experience. Their sales support and professional approach have helped us grow our business.",
+    avatar: "DK",
   },
   {
     id: 3,
-    name: "Aisha Khan",
-    location: "Bangalore",
+    name: "Brand Partner",
+    location: "India",
     rating: 5,
     text:
-      "The chocolate pistachio kunafa is a game changer! So decadent and perfect for special occasions. Will order again!",
-    avatar: "AK",
+      "ORIGON has been a reliable distribution partner for our products. Their expanding retail network and commitment to market development make them a valuable business partner.",
+    avatar: "BP",
+  },
+  {
+    id: 4,
+    name: "Customer",
+    location: "Kerala",
+    rating: 5,
+    text:
+      "The products are genuine, well-packaged, and always available when needed. We appreciate the quality and prompt service.",
+    avatar: "CU",
   },
 ];
 
@@ -77,15 +86,15 @@ const CustomerRating: React.FC = () => {
           className="text-center max-w-2xl mx-auto mb-16"
         >
           <span className="text-green-700 font-semibold text-sm uppercase tracking-wider mb-4 block">
-            Customer Love
+            Testimonials
           </span>
 
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            What Our <span className="text-green-700">Customers</span> Say
+            What Our <span className="text-green-700">Partners Say</span>
           </h2>
 
           <p className="text-gray-600 text-lg">
-            Don’t just take our word for it — hear from our happy customers!
+            At ORIGON, we believe that long-term relationships are built on trust, reliability, and consistent service.
           </p>
         </motion.div>
 
@@ -95,13 +104,13 @@ const CustomerRating: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {testimonials.map((testimonial) => (
             <motion.div
               key={testimonial.id}
               variants={itemVariants}
-              className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-500"
+              className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-500 flex flex-col"
             >
               {/* Quote Icon */}
               <div className="w-12 h-12 bg-green-700 rounded-xl flex items-center justify-center mb-6">
@@ -119,20 +128,20 @@ const CustomerRating: React.FC = () => {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-700 leading-relaxed mb-6 italic">
+              <p className="text-gray-700 leading-relaxed mb-6 italic flex-grow text-sm">
                 “{testimonial.text}”
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center text-white font-bold">
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0">
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <div className="font-bold text-gray-900">
+                  <div className="font-bold text-gray-900 text-sm">
                     {testimonial.name}
                   </div>
-                  <div className="text-sm text-gray-500">
+                  <div className="text-xs text-gray-500">
                     {testimonial.location}
                   </div>
                 </div>

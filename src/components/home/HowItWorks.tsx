@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MousePointer, CreditCard, Truck, Smile, LucideIcon } from "lucide-react";
+import { Search, Warehouse, Truck, Store, Smile, LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Step {
@@ -14,31 +14,33 @@ interface Step {
 const steps: Step[] = [
   {
     step: 1,
-    icon: MousePointer,
-    title: "Browse & Select",
-    description:
-      "Explore our delicious kunafa varieties and add your favorites to cart",
+    icon: Search,
+    title: "Product Sourcing",
+    description: "Partnering with trusted manufacturers to source quality FMCG products.",
   },
   {
     step: 2,
-    icon: CreditCard,
-    title: "Easy Payment",
-    description:
-      "Secure checkout with multiple payment options available",
+    icon: Warehouse,
+    title: "Warehousing",
+    description: "Products are stored in an organized environment for continuous availability.",
   },
   {
     step: 3,
     icon: Truck,
-    title: "Fast Delivery",
-    description:
-      "We prepare your order fresh and deliver it right to your door",
+    title: "Distribution",
+    description: "Efficiently distributing products across our operating markets.",
   },
   {
     step: 4,
+    icon: Store,
+    title: "Retail Supply",
+    description: "Supplying to wholesalers, supermarkets, retail chains, and independent retailers.",
+  },
+  {
+    step: 5,
     icon: Smile,
-    title: "Enjoy!",
-    description:
-      "Savor every bite of our authentic pistachio kunafa",
+    title: "Customer Delivery",
+    description: "Creating a seamless experience for retailers and end consumers.",
   },
 ];
 
@@ -65,7 +67,7 @@ const HowItWorks: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-green-700 via-green-600 to-emerald-500">
+    <section className="py-20 bg-gradient-to-br from-green-700 via-green-600 to-emerald-500 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -76,15 +78,15 @@ const HowItWorks: React.FC = () => {
           className="text-center max-w-2xl mx-auto mb-16"
         >
           <span className="text-white/80 font-semibold text-sm uppercase tracking-wider mb-4 block">
-            Simple Process
+            Streamlined Supply Chain
           </span>
 
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            How It Works
+            Our Process
           </h2>
 
           <p className="text-white/80 text-lg">
-            Getting your favorite kunafa is just a few clicks away!
+            From Brand to Consumer: A reliable supply chain that helps brands grow and retailers succeed.
           </p>
         </motion.div>
 
@@ -94,7 +96,7 @@ const HowItWorks: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8"
         >
           {steps.map((step, index) => {
             const Icon = step.icon;
@@ -126,7 +128,7 @@ const HowItWorks: React.FC = () => {
                   {step.title}
                 </h3>
 
-                <p className="text-white/80 leading-relaxed">
+                <p className="text-white/80 leading-relaxed text-sm">
                   {step.description}
                 </p>
               </motion.div>
